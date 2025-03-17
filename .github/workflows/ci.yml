@@ -1,7 +1,5 @@
 name: Java CI
 on: [push]
-env:
-  CONTAINER: ubuntu:18.04
 jobs:
   jenkins-container-pipeline:
     strategy:
@@ -16,9 +14,6 @@ jobs:
     container:
       image: ghcr.io/jenkinsci/jenkinsfile-runner:master
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
       - uses: actions/checkout@v4
       - uses:
           jenkinsci/jfr-container-action@master
