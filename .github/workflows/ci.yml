@@ -14,6 +14,8 @@ jobs:
     container:
       image: ghcr.io/jenkinsci/jenkinsfile-runner:master
     steps:
+      - name: Setup Docker on macOS
+        uses: douglascamata/setup-docker-macos-action@v1-alpha
       - uses: actions/checkout@v2
       - uses:
           jenkinsci/jfr-container-action@master
