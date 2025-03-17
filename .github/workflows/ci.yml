@@ -6,8 +6,8 @@ jobs:
             fail-fast: false
             matrix:
                 container:
-                    - centos:7
-                    - ubuntu:18.04
+                    - centos:8  # Updated to a version that includes GLIBC_2.28
+                    - ubuntu:20.04
     runs-on: ubuntu-latest
     env:
       ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
