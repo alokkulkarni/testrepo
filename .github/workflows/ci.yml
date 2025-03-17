@@ -4,6 +4,12 @@ env:
   CONTAINER: ubuntu:18.04
 jobs:
   jenkins-container-pipeline:
+    strategy:
+            fail-fast: false
+            matrix:
+                container:
+                    - centos:7
+                    - ubuntu:18.04
     runs-on: ubuntu-latest
     env:
       ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
